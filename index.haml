@@ -1,0 +1,66 @@
+!!! 5
+%html
+    %head
+        %meta(charset='utf-8')
+        %title Okils image carousel
+        %link{:rel => :stylesheet, :href => "css/oklis-image-carousel.css"}
+        %link{:rel => :stylesheet, :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"}
+        %link{:rel => :stylesheet, :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css"}
+
+    %body
+        .row
+            .col-md-3
+
+                <!-- Wrapper need for on hover overlay effect -->
+                .main-image-and-image-gallery-wrapper
+
+                    <!-- Main image on the product page -->
+                    .main-image-wrapper
+                        %img.img.main-image-wrapper__image(src="img/r1.jpg")
+                        .image-gallery__image-wrapper-image-overlay
+
+
+                    <!-- Previous image button -->
+                    %button.btn-prev.btn-prev-indent
+                        %i.glyphicon.glyphicon-chevron-left
+
+
+                    <!-- Gallery of images under the main image -->
+                    .image-gallery-wrapper
+                        %ul.image-gallery
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r2.jpg")
+                                <!-- Need for overlaying photos. Unfortunately ':after' is not working for <img> -->
+                                .image-gallery__image-wrapper-image-overlay
+
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r3.jpg")
+                                .image-gallery__image-wrapper-image-overlay
+
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r4.jpg")
+                                .image-gallery__image-wrapper-image-overlay
+
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r5.jpg")
+                                .image-gallery__image-wrapper-image-overlay
+
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r4.jpg")
+                                .image-gallery__image-wrapper-image-overlay
+
+                            %li.image-gallery__image-wrapper
+                                %img.img.image-gallery__image-wrapper-image(src="img/r3.jpg")
+                                .image-gallery__image-wrapper-image-overlay
+
+
+                    <!-- Next image button -->
+                    %button.btn-next.btn-next-indent
+                        %i.glyphicon.glyphicon-chevron-right
+
+
+
+        %script{:src  => "http://code.jquery.com/jquery-2.1.1.min.js"}
+        %script{:src  => "js/oklis-image-carousel.js"}
+        %script{:src  => "js/base.js"}
+        

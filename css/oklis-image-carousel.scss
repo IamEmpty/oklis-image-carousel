@@ -1,0 +1,95 @@
+// Variables
+//-------------------------------
+
+$white: #fff;
+$black: #000;
+
+
+// Here we go
+//-------------------------------
+
+.main-image-wrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.main-image-wrapper__image {
+  width: 100%;
+}
+
+
+.main-image-cover-top__chain-wrapper {
+  background: $white;
+  opacity: 1;
+  overflow: hidden;
+  width: 32px;
+  height: 32px;
+
+  &:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
+
+  &-chain {
+    position: absolute;
+    font-size: 24px;
+    display: block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+    padding: 0 8px;
+    color: $black;
+  }
+}
+
+.image-gallery {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+
+  &-wrapper {
+    overflow: hidden;
+  }
+
+  &__image-wrapper {
+    width: 25%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+
+    &-image {
+      width: 100%;
+      opacity: 1;
+
+      &-overlay {
+        display: block;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background: rgba(0, 0, 0, 0);
+        top: 0;
+        z-index: 20;
+      }
+    }
+  }
+
+  &_big-size-view {
+    margin-top: 10px;
+    max-width: 300px;
+  }
+}
+
+.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper-image-overlay {
+  background: rgba(0, 0, 0, .7);
+  transition: .2s;
+}
+
+.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper-image-overlay:hover {
+  background: rgba(0, 0, 0, 0);
+  transition: .2s;
+}
