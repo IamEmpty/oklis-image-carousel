@@ -1,5 +1,10 @@
 module.exports = function(grunt){
 
+    // Start web server
+    // Compile production files
+    // Compile developer friendly environment
+    // $ grunt serve
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sass: {
@@ -23,7 +28,11 @@ module.exports = function(grunt){
 			css: {
 				files: 'css/*.scss',
 				tasks: ['sass']
-			}
+			},
+            haml: {
+                files: '*.haml',
+                tasks: ['haml']
+            }
 		}
 	});
 
@@ -31,5 +40,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-haml');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['watch', 'haml']);
+	grunt.registerTask('default', ['watch']);
 };

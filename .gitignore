@@ -1,8 +1,11 @@
 # Sass cache
 .sass-cache/*
 
-#node modules
+# Node modules
 node_modules/*
 
 # WebStrom files
 .idea/*
+
+# Bower components
+js/bower_components/*
