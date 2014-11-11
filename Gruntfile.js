@@ -1,27 +1,35 @@
 module.exports = function(grunt){
 
-    grunt.initConfig({
-	  sass: {                              // Task
-	    dist: {                            // Target
-	      options: {                       // Target options
-	        style: 'expanded'
-	      },
-	      files: {							// Dictionary of files
-	        'css/oklis-image-carousel.css': 'css/oklis-image-carousel.scss'			// 'destination': 'source'
-	      }
-	    }
-	  },
-	  haml: {                              // Task
-	    dist: {                            // Target
-	      files: {                         // Dictionary of files
-	        'index.html': 'index.haml'     // 'destination': 'source'
-	      }
-	    }
-	  }
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'css/oklis-image-carousel.css': 'css/oklis-image-carousel.scss'
+				}
+			}
+		},
+		haml: {
+			dist: {
+				files: {
+					'index.html': 'index.haml'
+				}
+			}
+		},
+		watch: {
+			css: {
+				files: 'css/*.scss',
+				tasks: ['sass']
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-haml');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['sass', 'haml']);
+	grunt.registerTask('default', ['watch', 'haml']);
 };
