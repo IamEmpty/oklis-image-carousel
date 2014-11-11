@@ -1,59 +1,66 @@
-<!-- Wrapper need for on hover overlay effect -->
-                    <div class="main-image-and-image-gallery-wrapper">
-
-                        <!-- Main image on the product page -->
-
-                        <div class="main-image-wrapper">
-                            <img class="img main-image-wrapper__image" src="static/images/r1.jpg">
-                            <div class="image-gallery__image-wrapper-image-overlay"></div>
-                        </div>
-
-                        <!-- Main image on the product page END -->
-
-
-                        <!-- Gallery of images under the main image -->
-
-                        <!-- Previous image button -->
-                        <button class="btn-prev btn-prev-indent">
-                            <i class="ion-chevron-left"></i>
-                        </button>
-
-                        <div class="image-gallery-wrapper">
-                            <ul class="image-gallery">
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r2.jpg">
-                                    <!-- Need for overlaying photos. Unfortunately ':after' is not working for <img> -->
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r3.jpg">
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r4.jpg">
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r5.jpg">
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r4.jpg">
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                                <li class="image-gallery__image-wrapper">
-                                    <img class="img image-gallery__image-wrapper-image" src="static/images/r3.jpg">
-                                    <div class="image-gallery__image-wrapper-image-overlay"></div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Next image button -->
-                        <button class="btn-next btn-next-indent">
-                            <i class="ion-chevron-right"></i>
-                        </button>
-
-
-                        <!-- Gallery of images under the main image END -->
-
-                    </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Okils image carousel</title>
+    <link href='css/oklis-image-carousel.css' rel='stylesheet'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class='row'>
+      <div class='col-md-3'>
+        <!-- Wrapper need for on hover overlay effect -->
+        <div class='main-image-and-image-gallery-wrapper'>
+          <!-- Main image on the product page -->
+          <div class='main-image-wrapper'>
+            <img class='img main-image-wrapper__image' src='img/r1.jpg'>
+            <div class='image-gallery__image-wrapper-image-overlay'></div>
+          </div>
+          <!-- Previous image button -->
+          <button class='btn-prev btn-prev-indent'>
+            <i class='ion-chevron-left'></i>
+          </button>
+          <!-- Gallery of images under the main image -->
+          <div class='image-gallery-wrapper'>
+            <ul class='image-gallery'>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r2.jpg'>
+                <!-- Need for overlaying photos. Unfortunately ':after' is not working for <img> -->
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r3.jpg'>
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r4.jpg'>
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r5.jpg'>
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r4.jpg'>
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+              <li class='image-gallery__image-wrapper'>
+                <img class='img image-gallery__image-wrapper-image' src='img/r3.jpg'>
+                <div class='image-gallery__image-wrapper-image-overlay'></div>
+              </li>
+            </ul>
+          </div>
+          <!-- Next image button -->
+          <button class='btn-next btn-next-indent'>
+            <i class='ion-chevron-right'></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src='http://code.jquery.com/jquery-2.1.1.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js'></script>
+    <script src='js/oklis-image-carousel.js'></script>
+    <script src='js/base.js'></script>
+  </body>
+</html>
