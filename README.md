@@ -4,7 +4,7 @@ Oklis image carousel
 ## Used ##
 - Sass (SCSS)
 - Haml
-- Grunt
+- Grunt, include this plugins:
   - grunt-contrib-haml
   - grunt-contrib-sass
   - grunt-contrib-watch
