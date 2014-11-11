@@ -1,8 +1,10 @@
 oklis-image-carousel
 ====================
 
-Used
-Scss (Sass)
-Haml
-Grunt
-grunt-haml
+** Used **
+- Sass (SCSS)
+- Haml
+- Grunt
+-- grunt-contrib-haml
+-- grunt-contrib-sass
+-- grunt-contrib-watch
