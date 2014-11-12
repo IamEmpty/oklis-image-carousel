@@ -13,6 +13,23 @@
   z-index: 20;
 }
 
+.b-image-gallery__main-item_not-full {
+  cursor: pointer;
+  position: relative;
+  width: 70%;
+  float: left;
+}
+.b-image-gallery__main-item_not-full:after {
+  content: '';
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+
 .b-image-gallery__main-image {
   width: 100%;
 }
