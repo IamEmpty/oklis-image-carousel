@@ -14,11 +14,11 @@
             marginSize: 0,
             prevButton: '.btn-prev',
             nextButton: '.btn-next',
-            imageGalleryWrapper: '.image-carousel-wrapper',
-            imageGalleryClass: '.b-image-carousel',
-            imageGalleryWrapperClass: '.b-image-carousel__item',
-            imageGalleryImageClass: '.b-image-carousel__img',
-            mainImageClass: '.b-image-gallery__main-image'
+            imageCarouselWrapper: '.image-carousel-wrapper',
+            imageCarousel: '.b-image-carousel',
+            imageCarouselItem: '.b-image-carousel__item',
+            imageCarouselImg: '.b-image-carousel__img',
+            mainImage: '.b-image-gallery__main-image'
         };
 
 
@@ -31,18 +31,18 @@
                 $marginSize = options.marginSize,
                 $prevButton = $(options.prevButton, this),
                 $nextButton = $(options.nextButton, this),
-                $imageGalleryWrapper = $(options.imageGalleryWrapper, this),
-                $imageGalleryClass = $(options.imageGalleryClass, this),
-                $imageGalleryWrapperClass = $(options.imageGalleryWrapperClass, this),
-                $imageGalleryImageClass = $(options.imageGalleryImageClass, this),
-                $mainImageClass = $(options.mainImageClass, this);
+                $imageCarouselWrapper = $(options.imageCarouselWrapper, this),
+                $imageCarousel = $(options.imageCarousel, this),
+                $imageCarouselItem = $(options.imageCarouselItem, this),
+                $imageCarouselImg = $(options.imageCarouselImg, this),
+                $mainImage = $(options.mainImage, this);
 
 
 
             var calculateCarouselImgSize = function() {
 
-                var mainImgWidth = $mainImageClass.width();
-                var mainImgHeight = $mainImageClass.height();
+                var mainImgWidth = $mainImage.width();
+                var mainImgHeight = $mainImage.height();
 
                 // calculate width for carousel image
                 var carouselImgWidth = (mainImgWidth - ($marginSize * ($amountOfDisplayedImages - 1))) / $amountOfDisplayedImages;
@@ -53,21 +53,21 @@
                 if($orientationIsVertical === true) {
                     // In case of vertical orientation do
 
-                    $imageGalleryWrapperClass.css({
+                    $imageCarouselItem.css({
                         height: carouselImgHeight
                     });
 
-                    $imageGalleryWrapper.css({
+                    $imageCarouselWrapper.css({
                         height: mainImgHeight
                     });
                 } else {
                     // In case of horizontal orientation do
 
-                    $imageGalleryWrapperClass.css({
+                    $imageCarouselItem.css({
                         width: carouselImgWidth
                     });
 
-                    $imageGalleryWrapper.css({
+                    $imageCarouselWrapper.css({
                         width: mainImgWidth,
                         height: carouselImgHeight
                     });
@@ -76,9 +76,7 @@
 
 
             // We calculate the height of carousel image depending on the height of main image
-            $mainImageClass.load(function() {
-                calculateCarouselImgSize();
-            });
+            calculateCarouselImgSize();
 
             // Resize images on window resize
             $( window ).resize(function() {
@@ -92,7 +90,7 @@
             var stepOfPositioning = $amountOfDisplayedImages - 1;
 
             // Get amount of images in the image carousel
-            var amountOfGalleryImages = $imageGalleryImageClass.length;
+            var amountOfGalleryImages = $imageCarouselImg.length;
 
             // Get index of last image
             var endPosition = amountOfGalleryImages - 1;
@@ -107,18 +105,18 @@
 
 
             // To click on image we a change the main image
-            $imageGalleryWrapperClass.on('click', function () {
+            $imageCarouselItem.on('click', function () {
 
                 var clickedImageSrc = $(this).children().attr('src');
-                var mainImageSrc = $mainImageClass.attr('src');
+                var mainImageSrc = $mainImage.attr('src');
 
-                $mainImageClass.attr('src', clickedImageSrc);
+                $mainImage.attr('src', clickedImageSrc);
                 $(this).children().attr('src', mainImageSrc);
             });
 
 
-            var imageHeight = $imageGalleryImageClass.height() + $marginSize;
-            var imageWidth = $imageGalleryImageClass.width() + $marginSize;
+            var imageHeight = $imageCarouselImg.height() + $marginSize;
+            var imageWidth = $imageCarouselImg.width() + $marginSize;
 
 
             // In case of clicking on the next button
@@ -131,13 +129,13 @@
                     if($orientationIsVertical === true) {
                         // In case of vertical orientation
 
-                        $imageGalleryClass.animate({
+                        $imageCarousel.animate({
                             marginTop: "-=" + imageHeight
                         }, $animateSpeed);
                     } else {
                         // In case of horizontal orientation
 
-                        $imageGalleryClass.animate({
+                        $imageCarousel.animate({
                             marginLeft: "-=" + imageWidth
                         }, $animateSpeed);
                     }
@@ -165,13 +163,13 @@
                     if($orientationIsVertical === true) {
                         // In case of vertical orientation do
 
-                        $imageGalleryClass.animate({
+                        $imageCarousel.animate({
                             marginTop: '+=' + imageHeight
                         }, $animateSpeed);
                     } else {
                         // In case of horizontal orientation do
 
-                        $imageGalleryClass.animate({
+                        $imageCarousel.animate({
                             marginLeft: '+=' + imageWidth
                         }, $animateSpeed);
                     }
@@ -190,4 +188,4 @@
             });
         });
     };
-})(jQuery, window.Admin);
+})(jQuery);
