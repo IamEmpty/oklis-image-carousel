@@ -2,8 +2,10 @@ Oklis image carousel
 ====================
 
 ## For begining ##
+```
 npm install
 grunt build
+```
 
 ## Used ##
 - Sass (SCSS)
