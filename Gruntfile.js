@@ -20,7 +20,7 @@ module.exports = function(grunt){
 		haml: {
 			dist: {
 				files: {
-					'index.html': 'index.haml'
+					'build/index.html': 'index.haml'
 				}
 			}
 		},
@@ -33,12 +33,25 @@ module.exports = function(grunt){
                 files: '*.haml',
                 tasks: ['haml']
             }
+		},
+		'min': {
+		    'dist': {
+		        'src': ['js/oklis-image-carousel.js', 'js/base.js'],
+		        'dest': 'build/all-own.min.js'
+		    }
+		},
+		'cssmin': {
+		    'dist': {
+		        'src': ['css/oklis-image-carousel.css'],
+		        'dest': 'build/oklis-image-carousel.min.css'
+		    }
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-haml');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-yui-compressor');
 
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['cssmin', 'min', 'watch']);
 };

@@ -1,6 +1,10 @@
 Oklis image carousel
 ====================
 
+## For begining ##
+npm install
+grunt
+
 ## Used ##
 - Sass (SCSS)
 - Haml
