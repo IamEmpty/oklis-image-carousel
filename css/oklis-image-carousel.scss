@@ -11,35 +11,22 @@ $black: #000;
 .main-image-wrapper {
   cursor: pointer;
   position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+  }
 }
 
 .main-image-wrapper__image {
   width: 100%;
 }
-
-
-.main-image-cover-top__chain-wrapper {
-  background: $white;
-  opacity: 1;
-  overflow: hidden;
-  width: 32px;
-  height: 32px;
-
-  &:hover {
-    opacity: .5;
-    cursor: pointer;
-  }
-}
-
-  .main-image-cover-top__chain-wrapper-chain {
-    position: absolute;
-    font-size: 24px;
-    display: block;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
-    padding: 0 8px;
-    color: $black;
-  }
 
 
 //
@@ -71,32 +58,36 @@ $black: #000;
       position: relative;
       list-style: none;
       cursor: pointer;
+
+      &:after {
+        content: '';
+        display: block;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 20;
+      }
     }
 
       .image-gallery__image-wrapper-image {
         width: 100%;
-        opacity: 1;
+        //opacity: 1;
       }
 
-        .image-gallery__image-wrapper-image-overlay {
-          display: block;
-          overflow: hidden;
-          height: 100%;
-          width: 100%;
-          position: absolute;
-          background: rgba(0, 0, 0, 0);
-          top: 0;
-          z-index: 20;
-        }
 
-
-
-.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper-image-overlay {
+.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper:after {
   background: rgba(0, 0, 0, .7);
   transition: .2s;
 }
 
-.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper-image-overlay:hover {
+.main-image-and-image-gallery-wrapper:hover .main-image-wrapper:after {
+  background: rgba(0, 0, 0, .7);
+  transition: .2s;
+}
+
+.main-image-and-image-gallery-wrapper:hover .image-gallery__image-wrapper:hover:after {
   background: rgba(0, 0, 0, 0);
   transition: .2s;
 }

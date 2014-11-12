@@ -32,15 +32,23 @@ module.exports = function(grunt){
             haml: {
                 files: '*.haml',
                 tasks: ['haml']
+            },
+            min: {
+        		files: 'js/*.js',
+        		tasks: ['min']
+            },
+            cssmin: {
+            	files: 'css/*.css',
+            	tasks: ['cssmin']
             }
 		},
-		'min': {
+		min: {
 		    'dist': {
 		        'src': ['js/oklis-image-carousel.js', 'js/base.js'],
 		        'dest': 'build/all-own.min.js'
 		    }
 		},
-		'cssmin': {
+		cssmin: {
 		    'dist': {
 		        'src': ['css/oklis-image-carousel.css'],
 		        'dest': 'build/oklis-image-carousel.min.css'
@@ -53,5 +61,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-yui-compressor');
 
-	grunt.registerTask('default', ['cssmin', 'min', 'watch']);
+	grunt.registerTask('default', ['watch']);
 };
