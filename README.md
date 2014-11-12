@@ -3,6 +3,7 @@ Oklis image carousel
 
 ## For begining ##
 npm install
+grunt build
 grunt
 
 ## Used ##
@@ -12,3 +13,4 @@ grunt
   - grunt-contrib-haml
   - grunt-contrib-sass
   - grunt-contrib-watch
+  - grunt-yui-compressor

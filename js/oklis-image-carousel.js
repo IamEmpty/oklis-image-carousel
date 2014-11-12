@@ -14,11 +14,11 @@
             marginSize: 0,
             prevButton: '.btn-prev',
             nextButton: '.btn-next',
-            imageGalleryWrapper: '.image-gallery-wrapper',
-            imageGalleryClass: '.image-gallery',
-            imageGalleryWrapperClass: '.image-gallery__image-wrapper',
-            imageGalleryImageClass: '.image-gallery__image-wrapper-image',
-            mainImageClass: '.main-image-wrapper__image'
+            imageGalleryWrapper: '.image-carousel-wrapper',
+            imageGalleryClass: '.b-image-carousel',
+            imageGalleryWrapperClass: '.b-image-carousel__item',
+            imageGalleryImageClass: '.b-image-carousel__img',
+            mainImageClass: '.b-image-gallery__main-image'
         };
 
 
