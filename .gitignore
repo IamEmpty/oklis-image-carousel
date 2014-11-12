@@ -7,5 +7,5 @@ node_modules/*
 # WebStrom files
 .idea/*
 
-# Bower components
-js/bower_components/*
+# Build
+build/*
