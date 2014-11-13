@@ -89,7 +89,8 @@
   transition: .2s;
 }
 
-.btn-prev {
+.btn-left {
+  color: #000;
   position: absolute;
   z-index: 30;
   bottom: 0;
@@ -97,12 +98,17 @@
   display: block;
   border: 0;
   padding: 0;
+  background: rgba(255, 255, 255, 0.5);
 }
-.btn-prev:focus {
+.btn-left:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-left:focus {
   outline: none;
 }
 
-.btn-next {
+.btn-right {
+  color: #000;
   position: absolute;
   z-index: 30;
   bottom: 0;
@@ -110,8 +116,48 @@
   display: block;
   border: 0;
   padding: 0;
+  background: rgba(255, 255, 255, 0.5);
 }
-.btn-next:focus {
+.btn-right:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-right:focus {
+  outline: none;
+}
+
+.btn-up {
+  color: #000;
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.btn-up:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-up:focus {
+  outline: none;
+}
+
+.btn-down {
+  color: #000;
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.btn-down:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-down:focus {
   outline: none;
 }
 

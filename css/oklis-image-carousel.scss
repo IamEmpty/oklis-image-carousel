@@ -112,7 +112,8 @@ $black: #000;
 }
 
 
-.btn-prev {
+.btn-left {
+  color: $black;
   position: absolute;
   z-index: 30;
   bottom: 0;
@@ -120,13 +121,19 @@ $black: #000;
   display: block;
   border: 0;
   padding: 0;
+  background: rgba(255, 255, 255, .5);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
 
   &:focus {
     outline: none;
   }
 }
 
-.btn-next {
+.btn-right {
+  color: $black;
   position: absolute;
   z-index: 30;
   bottom: 0;
@@ -134,6 +141,51 @@ $black: #000;
   display: block;
   border: 0;
   padding: 0;
+  background: rgba(255, 255, 255, .5);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-up {
+  color: $black;
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, .5);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-down {
+  color: $black;
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, .5);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
 
   &:focus {
     outline: none;
