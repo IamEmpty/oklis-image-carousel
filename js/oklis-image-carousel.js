@@ -24,18 +24,18 @@
 
         return this.each(function () {
 
-            var options = $.extend({}, defaults, options),
-                $amountOfDisplayedImages = options.amountOfDisplayedImages,
-                $animateSpeed = options.animateSpeed,
-                $orientationIsVertical = options.orientationIsVertical,
-                $marginSize = options.marginSize,
-                $prevButton = $(options.prevButton, this),
-                $nextButton = $(options.nextButton, this),
-                $imageCarouselWrapper = $(options.imageCarouselWrapper, this),
-                $imageCarousel = $(options.imageCarousel, this),
-                $imageCarouselItem = $(options.imageCarouselItem, this),
-                $imageCarouselImg = $(options.imageCarouselImg, this),
-                $mainImage = $(options.mainImage, this);
+            var settings = $.extend({}, defaults, options),
+                $amountOfDisplayedImages = settings.amountOfDisplayedImages,
+                $animateSpeed = settings.animateSpeed,
+                $orientationIsVertical = settings.orientationIsVertical,
+                $marginSize = settings.marginSize,
+                $prevButton = $(settings.prevButton, this),
+                $nextButton = $(settings.nextButton, this),
+                $imageCarouselWrapper = $(settings.imageCarouselWrapper, this),
+                $imageCarousel = $(settings.imageCarousel, this),
+                $imageCarouselItem = $(settings.imageCarouselItem, this),
+                $imageCarouselImg = $(settings.imageCarouselImg, this),
+                $mainImage = $(settings.mainImage, this);
 
 
 
@@ -52,14 +52,24 @@
                 // Check orientation
                 if($orientationIsVertical === true) {
                     // In case of vertical orientation do
-
                     $imageCarouselItem.css({
                         height: carouselImgHeight
                     });
 
                     $imageCarouselWrapper.css({
-                        height: mainImgHeight
+                        width: (mainImgWidth / $amountOfDisplayedImages),
+                        height: mainImgHeight 
                     });
+
+                    $prevButton.css({
+                        width: carouselImgWidth,
+                        height: (carouselImgWidth / 2.5)
+                    })
+
+                    $nextButton.css({
+                        width: carouselImgWidth,
+                        height: (carouselImgWidth / 2.5)
+                    })
                 } else {
                     // In case of horizontal orientation do
 
@@ -71,6 +81,16 @@
                         width: mainImgWidth,
                         height: carouselImgHeight
                     });
+
+                    $prevButton.css({
+                        width: (carouselImgWidth / 2.5),
+                        height: carouselImgHeight
+                    })
+
+                    $nextButton.css({
+                        width: (carouselImgWidth / 2.5),
+                        height: carouselImgHeight
+                    })
                 }
             };
 
@@ -188,4 +208,4 @@
             });
         });
     };
-})(jQuery);
+}(jQuery));

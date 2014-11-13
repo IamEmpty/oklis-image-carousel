@@ -1,7 +1,6 @@
 module.exports = function(grunt){
 
     // Start web server
-    // Compile production files
     // Compile developer friendly environment
     // $ grunt serve
 
@@ -67,6 +66,9 @@ module.exports = function(grunt){
 		'watch'
 	]);
  
+
+ 	// Compile production files
+
 	grunt.registerTask('build', [
 		'haml',
 		'sass',

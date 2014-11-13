@@ -51,23 +51,18 @@ $black: #000;
 // Image gallery
 //
 
+.image-carousel-wrapper {
+  overflow: hidden;
+}
+
 .b-image-carousel {
   padding: 0;
   margin: 0;
   font-size: 0;
 }
 
-  .image-carousel-wrapper {
-    overflow: hidden;
-  }
-
-  .image-gallery_big-size-view {
-    margin-top: 10px;
-    max-width: 300px;
-  }
-
     .b-image-carousel__item {
-      width: 25%;
+      //width: 25%;
       height: 100%;
       display: inline-block;
       margin: 0;
@@ -114,4 +109,33 @@ $black: #000;
 .b-image-gallery:hover .b-image-gallery__main-item:hover:after {
   background: rgba(0, 0, 0, 0);
   transition: .2s;
+}
+
+
+.btn-prev {
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  left: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-next {
+  position: absolute;
+  z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
 }
