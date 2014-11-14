@@ -89,76 +89,42 @@
   transition: .2s;
 }
 
-.btn-left {
+.btn-direction {
   color: #000;
   position: absolute;
   z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+}
+.btn-direction:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn-direction:focus {
+  outline: none;
+}
+
+.btn-left-indent {
   bottom: 0;
   left: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.btn-left:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-.btn-left:focus {
-  outline: none;
 }
 
-.btn-right {
-  color: #000;
-  position: absolute;
-  z-index: 30;
+.btn-right-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.btn-right:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-.btn-right:focus {
-  outline: none;
 }
 
-.btn-up {
-  color: #000;
-  position: absolute;
-  z-index: 30;
+.btn-up-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.btn-up:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-.btn-up:focus {
-  outline: none;
 }
 
-.btn-down {
-  color: #000;
-  position: absolute;
-  z-index: 30;
+.btn-down-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, 0.5);
-}
-.btn-down:hover {
-  background: rgba(255, 255, 255, 0.8);
-}
-.btn-down:focus {
-  outline: none;
 }
 
 /*# sourceMappingURL=oklis-image-carousel.css.map */

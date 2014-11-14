@@ -112,82 +112,42 @@ $black: #000;
 }
 
 
-.btn-left {
+.btn-direction {
   color: $black;
   position: absolute;
   z-index: 30;
+  bottom: 0;
+  right: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, .5);
+
+  &:hover {
+    background: rgba(255, 255, 255, .8);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-left-indent {
   bottom: 0;
   left: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, .5);
-
-  &:hover {
-    background: rgba(255, 255, 255, .8);
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
 
-.btn-right {
-  color: $black;
-  position: absolute;
-  z-index: 30;
+.btn-right-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, .5);
-
-  &:hover {
-    background: rgba(255, 255, 255, .8);
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
 
-.btn-up {
-  color: $black;
-  position: absolute;
-  z-index: 30;
+.btn-up-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, .5);
-
-  &:hover {
-    background: rgba(255, 255, 255, .8);
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
 
-.btn-down {
-  color: $black;
-  position: absolute;
-  z-index: 30;
+.btn-down-indent {
   bottom: 0;
   right: 0;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: rgba(255, 255, 255, .5);
-
-  &:hover {
-    background: rgba(255, 255, 255, .8);
-  }
-
-  &:focus {
-    outline: none;
-  }
 }
