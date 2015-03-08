@@ -1,15 +1,15 @@
-/*--------- Colors ---------*/
-/*-- Fifty Shades of Grey --*/
-/*-- Sizes --*/
+
 .container {
   width: 940px;
   padding: 0 10px;
-  margin: 0 auto; }
+  margin: 0 auto;
+}
 
 .row:after {
   content: " ";
   clear: both;
-  display: table; }
+  display: table;
+}
 
 .col-md-1 {
   display: block;

@@ -6,42 +6,45 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		sass: {
+		css: {
 			dist: {
 				options: {
 					style: 'expanded'
 				},
 				files: {
-					'css/oklis-image-carousel.css': 'css/oklis-image-carousel.scss'
+					'examples/css/oklis-image-carousel.css': 'css/oklis-image-carousel.scss'
 				}
 			}
 		},
-		haml: {
+		jade: {
 			dist: {
+				options: {
+					pretty: true
+				},
 				files: {
-					'build/index.html': 'index.haml'
+					'examples/index.html': 'jade/index.jade'
 				}
 			}
 		},
 		watch: {
 			css: {
 				files: 'css/*.scss',
-				tasks: ['sass']
+				tasks: [ 'css' ]
 			},
-            haml: {
-                files: '*.haml',
-                tasks: ['haml']
-            },
-            min: {
-        		files: 'js/*.js',
-        		tasks: ['min']
-            },
-            cssmin: {
-            	files: 'css/*.css',
-            	tasks: ['cssmin']
-            }
-		},
-		min: {
+			html: {
+					files: 'jade/*.jade',
+					tasks: [ 'html' ]
+			}
+			/*min: {
+			files: 'js/*.js',
+			tasks: ['min']
+			},*/
+			/*cssmin: {
+				files: 'css/*.css',
+				tasks: ['cssmin']
+			}*/
+		}
+		/*min: {
 		    'dist': {
 		        'src': ['js/oklis-image-carousel.js', 'js/base.js'],
 		        'dest': 'build/all-own.min.js'
@@ -52,27 +55,25 @@ module.exports = function(grunt){
 		        'src': ['css/oklis-image-carousel.css'],
 		        'dest': 'build/oklis-image-carousel.min.css'
 		    }
-		}
+		}*/
 	});
 
 
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-haml');
+	grunt.loadNpmTasks('grunt-contrib-stylus');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-yui-compressor');
+	//grunt.loadNpmTasks('grunt-yui-compressor');
 
-
-	grunt.registerTask('default', [
-		'watch'
-	]);
- 
 
  	// Compile production files
-
 	grunt.registerTask('build', [
-		'haml',
-		'sass',
-		'cssmin',
-		'min'
+		'jade',
+		'css'
+	]);
+
+	grunt.registerTask('default', [
+		'watch',
+		'build'
 	]);
 };
