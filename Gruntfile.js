@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+module.exports = function( grunt ) {
 
     // Start web server
     // Compile developer friendly environment
@@ -6,7 +6,7 @@ module.exports = function(grunt){
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		css: {
+		sass: {
 			dist: {
 				options: {
 					style: 'expanded'
@@ -29,11 +29,11 @@ module.exports = function(grunt){
 		watch: {
 			css: {
 				files: 'css/*.scss',
-				tasks: [ 'css' ]
+				tasks: [ 'sass' ]
 			},
 			html: {
 					files: 'jade/*.jade',
-					tasks: [ 'html' ]
+					tasks: [ 'jade' ]
 			}
 			/*min: {
 			files: 'js/*.js',
@@ -43,6 +43,24 @@ module.exports = function(grunt){
 				files: 'css/*.css',
 				tasks: ['cssmin']
 			}*/
+		},
+		copy: {
+			main: {
+				expand: true,
+				cwd: 'js/',
+				src: '*.js',
+				dest: 'examples/js/',
+				flatten: true,
+				filter: 'isFile'
+			},
+			vendor: {
+				expand: true,
+				cwd: 'bower_components/jquery/dist/',
+				src: 'jquery.js',
+				dest: 'examples/js/',
+				flatten: true,
+				filter: 'isFile'
+			}
 		}
 		/*min: {
 		    'dist': {
@@ -63,17 +81,19 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	//grunt.loadNpmTasks('grunt-yui-compressor');
 
 
  	// Compile production files
 	grunt.registerTask('build', [
 		'jade',
-		'css'
+		'sass',
+		'copy'
 	]);
 
 	grunt.registerTask('default', [
-		'watch',
-		'build'
+		'build',
+		'watch'
 	]);
 };

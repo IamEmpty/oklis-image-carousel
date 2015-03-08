@@ -4,8 +4,11 @@
 # Node modules
 node_modules/*
 
-# WebStrom files
+# WebStorm files
 .idea/*
 
 # Build
 build/*
+
+# Bower
+bower_components
