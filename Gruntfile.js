@@ -1,8 +1,8 @@
 module.exports = function( grunt ) {
 
-    // Start web server
-    // Compile developer friendly environment
-    // $ grunt serve
+  // Start web server
+  // Compile developer friendly environment
+  // $ grunt serve
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -77,7 +77,6 @@ module.exports = function( grunt ) {
 	});
 
 
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-watch');
