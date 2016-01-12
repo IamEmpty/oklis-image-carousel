@@ -1,14 +1,14 @@
 # Sass cache
-.sass-cache/*
+.sass-cache/
 
 # Node modules
-node_modules/*
+node_modules/
 
 # WebStorm files
-.idea/*
+.idea/
 
 # Build
-build/*
+build/
 
 # Bower
 bower_components
