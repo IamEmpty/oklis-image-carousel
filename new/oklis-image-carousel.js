@@ -4,11 +4,11 @@
  * Version: 0.1.1
  */
 
-"use strict";
 
 var currentPosition = 0;
 
 (function ($) {
+  "use strict";
 
   $.fn.oklisImageCarousel = function(options) {
 
@@ -82,7 +82,7 @@ var currentPosition = 0;
         } else {
           orientationHorizontal(); // In case of horizontal orientation do
         }
-      };
+      }
 
 
       function fullMotion() {
@@ -127,7 +127,7 @@ var currentPosition = 0;
           width: carouselItemWidth,
           height: (carouselItemWidth / 2.5)
         });
-      };
+      }
 
 
       function orientationHorizontal() {
@@ -152,7 +152,7 @@ var currentPosition = 0;
           // width: (carouselItemWidth / 2.5),
           // height: carouselItemHeight
         });
-      };
+      }
 
 
 
