@@ -12,7 +12,7 @@ module.exports = function( grunt ) {
           style: 'expanded'
         },
         files: {
-          'examples/css/oklis-image-carousel.css': 'css/oklis-image-carousel.scss'
+          'dist/css/oklis-image-carousel.css': 'stylesheets/oklis-image-carousel.scss'
         }
       }
     },
@@ -22,13 +22,13 @@ module.exports = function( grunt ) {
           pretty: true
         },
         files: {
-          'examples/index.html': 'jade/index.jade'
+          'dist/index.html': 'jade/index.jade'
         }
       }
     },
     watch: {
       css: {
-        files: 'css/*.scss',
+        files: 'stylesheets/*.scss',
         tasks: [ 'sass' ]
       },
       html: {
@@ -49,7 +49,7 @@ module.exports = function( grunt ) {
         expand: true,
         cwd: 'js/',
         src: '*.js',
-        dest: 'examples/js/',
+        dest: 'dist/js/',
         flatten: true,
         filter: 'isFile'
       },
@@ -57,7 +57,7 @@ module.exports = function( grunt ) {
         expand: true,
         cwd: 'bower_components/jquery/dist/',
         src: 'jquery.min.js',
-        dest: 'examples/js/',
+        dest: 'dist/js/',
         flatten: true,
         filter: 'isFile'
       }
@@ -85,14 +85,14 @@ module.exports = function( grunt ) {
 
 
   // Compile production files
-  grunt.registerTask('build', [
+  grunt.registerTask('dist', [
     'jade',
     'sass',
     'copy'
   ]);
 
   grunt.registerTask('default', [
-    'build',
+    'dist',
     'watch'
   ]);
 };
