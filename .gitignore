@@ -12,3 +12,6 @@ build/
 
 # Bower
 bower_components
+
+# OS X
+.DS_Store
