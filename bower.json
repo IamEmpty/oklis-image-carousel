@@ -1,0 +1,25 @@
+{
+  "name": "oklis-image-carousel",
+  "description": "",
+  "main": "README.md",
+  "authors": [
+    "IamEmpty"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jquery"
+  ],
+  "homepage": "https://github.com/IamEmpty/oklis-image-carousel",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}

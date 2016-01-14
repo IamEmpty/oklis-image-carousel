@@ -3,12 +3,16 @@
 
 # Node modules
 node_modules/
+npm-debug.log
 
 # WebStorm files
 .idea/
 
 # Build
 build/
+
+# Dist
+dist/
 
 # Bower
 bower_components
