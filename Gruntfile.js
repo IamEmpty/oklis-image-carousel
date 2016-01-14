@@ -56,7 +56,7 @@ module.exports = function( grunt ) {
       vendor: {
         expand: true,
         cwd: 'bower_components/jquery/dist/',
-        src: 'jquery.js',
+        src: 'jquery.min.js',
         dest: 'examples/js/',
         flatten: true,
         filter: 'isFile'
