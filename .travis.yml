@@ -3,5 +3,7 @@ node_js:
   - "4.1"
   - "5.4.1"
 before_script:
-  - npm install -g gulp
-script: gulp
+  - npm install -g grunt
+  - npm install -g bower
+  - bower install
+script: grunt
