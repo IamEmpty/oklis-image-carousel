@@ -1,5 +1,6 @@
-Oklis image carousel
-====================
+# Oklis image carousel
+
+![build status](https://travis-ci.org/IamEmpty/oklis-image-carousel.svg?branch=master "Build status")
 
 ## For begining ##
 
