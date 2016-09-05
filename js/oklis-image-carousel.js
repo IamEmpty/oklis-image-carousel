@@ -1,7 +1,11 @@
 /**
- * Created by IamEmpty on 05.11.14.
+ * Created by IamEmpty on 05.11.2014.
+ * Edited by IamEmpty on 5.02.2015.
+ * Version: 0.1.1
  */
 
+
+var currentPosition = 0;
 
 (function ($) {
   "use strict";
@@ -9,123 +13,179 @@
   $.fn.oklisImageCarousel = function(options) {
 
     var defaults = {
-      amountOfDisplayedImages: 4,
+      amountOfDisplayedItems: 4,
       animateSpeed: 300,
       orientationIsVertical: false,
       marginSize: 0,
       prevButton: '.btn-prev',
       nextButton: '.btn-next',
       imageCarouselWrapper: '.image-carousel-wrapper',
-      imageCarousel: '.b-image-carousel',
-      imageCarouselItem: '.b-image-carousel__item',
+      carousel: '.b-image-carousel',
+      carouselItem: '.b-image-carousel__item',
       imageCarouselImg: '.b-image-carousel__img',
-      mainImage: '.b-image-gallery__main-image'
+      mainImage: '.b-image-gallery__main-image',
+      isFullMotion: false,
+      isInfinity: false,
     };
 
-
-    return this.each(function () {
+    return this.each(function() {
 
       var settings = $.extend({}, defaults, options),
-        $amountOfDisplayedImages = settings.amountOfDisplayedImages,
+        $amountOfDisplayedItems = settings.amountOfDisplayedItems,
         $animateSpeed = settings.animateSpeed,
         $orientationIsVertical = settings.orientationIsVertical,
         $marginSize = settings.marginSize,
         $prevButton = $(settings.prevButton, this),
         $nextButton = $(settings.nextButton, this),
         $imageCarouselWrapper = $(settings.imageCarouselWrapper, this),
-        $imageCarousel = $(settings.imageCarousel, this),
-        $imageCarouselItem = $(settings.imageCarouselItem, this),
+        $carousel = $(settings.carousel, this),
+        $carouselItem = $(settings.carouselItem, this),
         $imageCarouselImg = $(settings.imageCarouselImg, this),
-        $mainImage = $(settings.mainImage, this);
+        $mainImage = $(settings.mainImage, this),
+        $isFullMotion = settings.isFullMotion;
 
 
-      var calculateCarouselImgSize = function() {
-
-        var mainImgWidth = $mainImage.width();
-        var mainImgHeight = $mainImage.height();
-
-        // calculate width for carousel image
-        var carouselImgWidth = (mainImgWidth - ($marginSize * ($amountOfDisplayedImages - 1))) / $amountOfDisplayedImages;
-        // calculate height for carousel image
-        var carouselImgHeight = (mainImgHeight - ($marginSize * ($amountOfDisplayedImages - 1))) / $amountOfDisplayedImages;
-
-        // Check orientation
-        if($orientationIsVertical === true) {
-          // In case of vertical orientation do
-          $imageCarouselItem.css({
-            height: carouselImgHeight
-          });
-
-          $imageCarouselWrapper.css({
-            width: (mainImgWidth / $amountOfDisplayedImages),
-            height: mainImgHeight
-          });
-
-          $prevButton.css({
-            width: carouselImgWidth,
-            height: (carouselImgWidth / 2.5)
-          });
-
-          $nextButton.css({
-            width: carouselImgWidth,
-            height: (carouselImgWidth / 2.5)
-          });
-        } else {
-          // In case of horizontal orientation do
-
-          $imageCarouselItem.css({
-            width: carouselImgWidth
-          });
-
-          $imageCarouselWrapper.css({
-            width: mainImgWidth,
-            height: carouselImgHeight
-          });
-
-          $prevButton.css({
-            width: (carouselImgWidth / 2.5),
-            height: carouselImgHeight
-          });
-
-          $nextButton.css({
-            width: (carouselImgWidth / 2.5),
-            height: carouselImgHeight
-          });
-        }
-      };
-
+      /*---         Begin         ---*/
 
       // We calculate the height of carousel image depending on the height of main image
-      calculateCarouselImgSize();
+      calculateCarouselItemSize();
 
       // Resize images on window resize
       $( window ).resize(function() {
-        calculateCarouselImgSize();
+        calculateCarouselItemSize();
       });
 
 
-      // Coordinates of first displayed image
-      var currentPosition = 0;
+      var mainImgWidth = $mainImage.width();
+      var mainImgHeight = $mainImage.height();
+      mainImgWidth = 300;
+      mainImgHeight = 300;
 
-      var stepOfPositioning = $amountOfDisplayedImages - 1;
+      var carouselItemWidth;
+      var carouselItemHeight;
+
+      function calculateCarouselItemSize() {
+
+        // Check Full Motion
+
+        if( $isFullMotion === true ) {
+          fullMotion();
+        } else {
+          notFullMotion();
+        }
+
+
+        // Check orientation
+
+        if( $orientationIsVertical === true ) {
+          orientationVertical(); // In case of vertical orientation do
+        } else {
+          orientationHorizontal(); // In case of horizontal orientation do
+        }
+      }
+
+
+      function fullMotion() {
+
+        // calculate width for carousel image
+        carouselItemWidth = $carouselItem.width();
+
+        // calculate height for carousel image
+        carouselItemHeight = $carouselItem.height();
+      }
+
+
+      function notFullMotion() {
+
+        // calculate width for carousel image
+        carouselItemWidth = (mainImgWidth - ($marginSize * ($amountOfDisplayedItems - 1))) / $amountOfDisplayedItems;
+
+        // calculate height for carousel image
+        carouselItemHeight = (mainImgHeight - ($marginSize * ($amountOfDisplayedItems - 1))) / $amountOfDisplayedItems;
+      }
+
+
+      function orientationVertical() {
+
+        // In case of vertical orientation do
+
+        $carouselItem.css({
+          height: carouselItemHeight
+        });
+
+        $imageCarouselWrapper.css({
+          width: (mainImgWidth / $amountOfDisplayedItems),
+          height: mainImgHeight
+        });
+
+        $prevButton.css({
+          width: carouselItemWidth,
+          height: (carouselItemWidth / 2.5)
+        });
+
+        $nextButton.css({
+          width: carouselItemWidth,
+          height: (carouselItemWidth / 2.5)
+        });
+      }
+
+
+      function orientationHorizontal() {
+
+        // In case of horizontal orientation do
+
+        $carouselItem.css({
+          width: carouselItemWidth
+        });
+
+        $imageCarouselWrapper.css({
+          width: mainImgWidth,
+          height: carouselItemHeight
+        });
+
+        $prevButton.css({
+          // width: (carouselItemWidth / 2.5),
+          // height: carouselItemHeight
+        });
+
+        $nextButton.css({
+          // width: (carouselItemWidth / 2.5),
+          // height: carouselItemHeight
+        });
+      }
+
+
+
+      // Coordinates of first displayed image
+      currentPosition = 0;
+
+      // Поправка нав то, что в программировании всё начинается с 0 а не с 1
+      var stepOfPositioning = $amountOfDisplayedItems - 1;
 
       // Get amount of images in the image carousel
-      var amountOfGalleryImages = $imageCarouselImg.length;
-
+      var amountOfGalleryItems = $carouselItem.length;
       // Get index of last image
-      var endPosition = amountOfGalleryImages - 1;
+      var endPosition = amountOfGalleryItems - 1;
 
       // Hide previous button at the beginning
-      $prevButton.hide();
+      $prevButton.attr('disabled','disabled');
 
-      // if amount less then 4, we will hide next button too
-      if(amountOfGalleryImages <= $amountOfDisplayedImages) {
-        $nextButton.hide();
+      if( $isFullMotion === true ) {
+
+        if( currentPosition >= $amountOfDisplayedItems ) {
+          $nextButton.attr('disabled','disabled');
+        }
+      } else {
+
+        // if amount less then 4, we will hide next button too
+        if( amountOfGalleryItems <= $amountOfDisplayedItems ) {
+          $nextButton.attr('disabled','disabled');
+        }
       }
 
 
       // To click on image we a change the main image
-      $imageCarouselItem.on('click', function () {
+      $carouselItem.on('click', function() {
 
         var clickedImageSrc = $(this).children().attr('src');
         var mainImageSrc = $mainImage.attr('src');
@@ -136,37 +196,76 @@
 
 
       var imageHeight = $imageCarouselImg.height() + $marginSize;
-      var imageWidth = $imageCarouselImg.width() + $marginSize;
+      var itemWidth = $carouselItem.width() + $marginSize;
 
 
       // In case of clicking on the next button
       $nextButton.on('click', function(e) {
 
-        if(currentPosition < endPosition - stepOfPositioning) {
-          currentPosition++;
+        if( $isFullMotion === true ) {
 
-          // Check orientation
-          if($orientationIsVertical === true) {
-            // In case of vertical orientation
+          if( currentPosition < endPosition ) {
+            currentPosition++;
 
-            $imageCarousel.animate({
-              marginTop: "-=" + imageHeight
-            }, $animateSpeed);
-          } else {
-            // In case of horizontal orientation
+            // Check orientation
+            if( $orientationIsVertical === true ) {
 
-            $imageCarousel.animate({
-              marginLeft: "-=" + imageWidth
-            }, $animateSpeed);
+              // In case of vertical orientation
+
+              $carousel.animate({
+                marginTop: "-=" + imageHeight
+              }, $animateSpeed);
+            } else {
+
+              // In case of horizontal orientation
+
+              $carousel.animate({
+                marginLeft: "-=" + itemWidth
+              }, $animateSpeed);
+            }
+          }
+        } else {
+
+          if( currentPosition < endPosition - stepOfPositioning ) {
+            currentPosition++;
+
+            // Check orientation
+            if( $orientationIsVertical === true ) {
+
+              // In case of vertical orientation
+
+              $carousel.animate({
+                marginTop: "-=" + imageHeight
+              }, $animateSpeed);
+            } else {
+
+              // In case of horizontal orientation
+
+              $carousel.animate({
+                marginLeft: "-=" + itemWidth
+              }, $animateSpeed);
+            }
           }
         }
 
-        if(currentPosition >= endPosition - stepOfPositioning) {
-          $(this).hide();
+
+
+        if( $isFullMotion === true ) {
+
+          if( currentPosition >= endPosition ) {
+            $(this).attr('disabled','disabled');
+          }
+        } else {
+
+          if( currentPosition >= endPosition - stepOfPositioning ) {
+            $(this).attr('disabled','disabled');
+          }
         }
 
-        if(currentPosition > 0) {
-          $prevButton.show();
+
+
+        if( currentPosition > 0 ) {
+          $prevButton.removeAttr('disabled');
         }
 
         e.preventDefault();
@@ -176,33 +275,44 @@
       // In case of clicking on the previous button
       $prevButton.on('click', function(e) {
 
-        if(currentPosition > 0) {
+        if( currentPosition > 0 ) {
           currentPosition--;
 
           // Check orientation
-          if($orientationIsVertical === true) {
+          if( $orientationIsVertical === true ) {
+
             // In case of vertical orientation do
 
-            $imageCarousel.animate({
+            $carousel.animate({
               marginTop: '+=' + imageHeight
             }, $animateSpeed);
           } else {
+
             // In case of horizontal orientation do
 
-            $imageCarousel.animate({
-              marginLeft: '+=' + imageWidth
+            $carousel.animate({
+              marginLeft: '+=' + itemWidth
             }, $animateSpeed);
           }
         }
 
 
-        if(currentPosition <= 0) {
-          $(this).hide();
+        if( currentPosition <= 0 ) {
+          $(this).attr('disabled','disabled');
         }
 
-        if(currentPosition < endPosition - stepOfPositioning) {
-          $nextButton.show();
+        if( $isFullMotion === true ) {
+
+          if( currentPosition < endPosition ) {
+            $nextButton.removeAttr('disabled');
+          }
+        } else {
+
+          if( currentPosition < endPosition - stepOfPositioning ) {
+            $nextButton.removeAttr('disabled');
+          }
         }
+
 
         e.preventDefault();
       });

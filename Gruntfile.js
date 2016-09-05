@@ -17,13 +17,13 @@ module.exports = function(grunt) {
         }
       }
     },
-    jade: {
+    pug: {
       dist: {
         options: {
           pretty: true
         },
         files: {
-          'dist/index.html': 'jade/index.jade'
+          'dist/index.html': 'examples/index.pug'
         }
       }
     },
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 
   // Compile production files
   grunt.registerTask('dist', [
-    'jade',
+    'pug',
     'sass',
     'copy'
   ]);
