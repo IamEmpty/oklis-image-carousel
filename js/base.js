@@ -8,3 +8,9 @@ $('.b-image-gallery_vertical').oklisImageCarousel({
   prevButton: '.btn-up',
   nextButton: '.btn-down'
 });
+
+$('.as-we-need').oklisImageCarousel({
+  orientationIsVertical: true,
+  prevButton: '.btn-up',
+  nextButton: '.btn-down'
+});

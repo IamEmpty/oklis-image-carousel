@@ -3,12 +3,11 @@ html
   head
     meta(charset= 'utf-8')
     title Oklis image carousel v1.1.0
-    link(rel= 'stylesheet', href= 'normalize.css')
     link(rel= 'stylesheet', href= 'css/main.css')
     link(rel= 'stylesheet', href= 'css/oklis-image-carousel.css')
   body
     .row
-      .col-md-3.col-md-offset-3
+      //- .col-md-3.col-md-offset-3
         //- Wrapper need for on hover overlay effect
         .b-image-gallery.b-image-gallery_horizontal
 
@@ -36,17 +35,16 @@ html
 
       .col-md-4
         //- Wrapper need for on hover overlay effect
-        .b-image-gallery.b-image-gallery_vertical
+        .b-image-gallery.b-image-gallery_vertical.as-we-need
 
           //- Main image on the product page
           .b-image-gallery__main-item.b-image-gallery__main-item_not-full
             img.img.b-image-gallery__main-image(src= '../img/r1.jpg')
 
-
           //- Previous image button
           button.btn-direction.btn-up.btn-up-indent
             i.glyphicon.glyphicon-chevron-up
-
+            i Left
 
           //- Gallery of images under the main image
           .image-carousel-wrapper
@@ -55,11 +53,11 @@ html
                 li.b-image-carousel__item
                   img.img.b-image-carousel__img(src= image)
 
-
           //- Next image button
           button.btn-direction.btn-down.btn-down-indent
             i.glyphicon.glyphicon-chevron-down
-    .row
+            i right
+    //- .row
       .col-md-3
       .col-md-3
 
@@ -125,7 +123,7 @@ html
           // Next image button
           button.btn-next.btn-next-indent
             i.glyphicon.glyphicon-chevron-down
-    main
+    //- main
       .successful-stories
         .container
           .row
@@ -195,5 +193,5 @@ html
                     button.carousel-navigation__button.btn.btn-nav.btn-next
                       img.img(src='/img/icons/chevron-right.png')
     script(src= 'js/jquery.min.js')
-    script(src= 'js/oklis-image-carousel.js')
+    // script(src= 'js/oklis-image-carousel.js')
     script(src= 'js/base.js')

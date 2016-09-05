@@ -104,7 +104,7 @@ var currentPosition = 0;
         carouselItemHeight = (mainImgHeight - ($marginSize * ($amountOfDisplayedItems - 1))) / $amountOfDisplayedItems;
       }
 
-
+      // TODO: stop usinf css() method
       function orientationVertical() {
 
         // In case of vertical orientation do
@@ -312,7 +312,6 @@ var currentPosition = 0;
             $nextButton.removeAttr('disabled');
           }
         }
-
 
         e.preventDefault();
       });
