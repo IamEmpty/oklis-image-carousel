@@ -33,8 +33,8 @@ module.exports = function(grunt) {
         tasks: [ 'sass' ]
       },
       html: {
-        files: 'jade/*.jade',
-        tasks: [ 'jade' ]
+        files: 'examples/*.pug',
+        tasks: [ 'pug' ]
       }
       /*min: {
       files: 'js/*.js',
@@ -59,6 +59,14 @@ module.exports = function(grunt) {
         cwd: 'bower_components/jquery/dist/',
         src: 'jquery.min.js',
         dest: 'dist/js/',
+        flatten: true,
+        filter: 'isFile'
+      },
+      css: {
+        expand: true,
+        cwd: 'stylesheets/',
+        src: '*.css',
+        dest: 'dist/css/',
         flatten: true,
         filter: 'isFile'
       }
