@@ -1,4 +1,5 @@
-module.exports = function( grunt ) {
+module.exports = function(grunt) {
+  require('load-grunt-tasks')(grunt);
 
   // Start web server
   // Compile developer friendly environment
@@ -32,8 +33,8 @@ module.exports = function( grunt ) {
         tasks: [ 'sass' ]
       },
       html: {
-          files: 'jade/*.jade',
-          tasks: [ 'jade' ]
+        files: 'jade/*.jade',
+        tasks: [ 'jade' ]
       }
       /*min: {
       files: 'js/*.js',
@@ -77,13 +78,6 @@ module.exports = function( grunt ) {
   });
 
 
-  grunt.loadNpmTasks('grunt-contrib-stylus');
-  grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  //grunt.loadNpmTasks('grunt-yui-compressor');
-
-
   // Compile production files
   grunt.registerTask('dist', [
     'jade',
@@ -95,4 +89,5 @@ module.exports = function( grunt ) {
     'dist',
     'watch'
   ]);
+
 };

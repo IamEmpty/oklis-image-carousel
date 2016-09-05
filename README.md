@@ -2,7 +2,7 @@
 
 ![build status](https://travis-ci.org/IamEmpty/oklis-image-carousel.svg?branch=master "Build status")
 
-## For begining ##
+## For beginning ##
 
     npm install
     bower install
