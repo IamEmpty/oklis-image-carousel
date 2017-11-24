@@ -3,13 +3,13 @@
   "description": "image carousel",
   "main": "README.md",
   "authors": [
-    "IamEmpty"
+    "pure-js"
   ],
   "license": "MIT",
   "keywords": [
-    "jquery"
+    "carousel"
   ],
-  "homepage": "https://github.com/IamEmpty/oklis-image-carousel",
+  "homepage": "https://github.com/pure-js/oklis-image-carousel",
   "moduleType": [],
   "ignore": [
     "**/.*",
@@ -20,6 +20,6 @@
   ],
   "dependencies": {
     "jquery": "~3.1.0",
-    "normalize-css": "~4.2.0"
+    "normalize-css": "~5.0.0"
   }
 }

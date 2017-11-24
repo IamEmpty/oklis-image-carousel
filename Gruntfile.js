@@ -10,37 +10,37 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
         },
         files: {
-          'dist/css/oklis-image-carousel.css': 'stylesheets/oklis-image-carousel.scss'
-        }
-      }
+          'dist/css/oklis-image-carousel.css': 'stylesheets/oklis-image-carousel.scss',
+        },
+      },
     },
-    jade: {
+    pug: {
       dist: {
         options: {
-          pretty: true
+          pretty: true,
         },
         files: {
-          'dist/index.html': 'jade/index.jade'
-        }
-      }
+          'dist/index.html': 'examples/index.pug',
+        },
+      },
     },
     watch: {
       css: {
         files: 'stylesheets/*.scss',
-        tasks: [ 'sass' ]
+        tasks: ['sass'],
       },
       html: {
-        files: 'jade/*.jade',
-        tasks: [ 'jade' ]
-      }
-      /*min: {
+        files: 'examples/*.pug',
+        tasks: ['pug'],
+      },
+      /* min: {
       files: 'js/*.js',
       tasks: ['min']
       },*/
-      /*cssmin: {
+      /* cssmin: {
         files: 'css/*.css',
         tasks: ['cssmin']
       }*/
@@ -48,11 +48,11 @@ module.exports = function(grunt) {
     copy: {
       main: {
         expand: true,
-        cwd: 'js/',
+        cwd: 'src/',
         src: '*.js',
         dest: 'dist/js/',
         flatten: true,
-        filter: 'isFile'
+        filter: 'isFile',
       },
       vendor: {
         expand: true,
@@ -60,9 +60,22 @@ module.exports = function(grunt) {
         src: 'jquery.min.js',
         dest: 'dist/js/',
         flatten: true,
-        filter: 'isFile'
-      }
-    }
+        filter: 'isFile',
+      },
+      css: {
+        expand: true,
+        cwd: 'stylesheets/',
+        src: '*.css',
+        dest: 'dist/css/',
+        flatten: true,
+        filter: 'isFile',
+      },
+    },
+    eslint: {
+      target: [
+        'src/oklis-image-carousel.js',
+      ],
+    },
     /*min: {
         'dist': {
             'src': ['js/oklis-image-carousel.js', 'js/base.js'],
@@ -80,14 +93,13 @@ module.exports = function(grunt) {
 
   // Compile production files
   grunt.registerTask('dist', [
-    'jade',
+    'pug',
     'sass',
-    'copy'
+    'copy',
   ]);
 
   grunt.registerTask('default', [
     'dist',
-    'watch'
+    'watch',
   ]);
-
 };

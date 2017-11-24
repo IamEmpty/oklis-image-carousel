@@ -3,23 +3,25 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IamEmpty/oklis-image-carousel"
+    "url": "https://github.com/pure-js/oklis-image-carousel"
   },
-  "author": "IamEmpty",
+  "author": "pure-js",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IamEmpty/oklis-image-carousel/issues"
+    "url": "https://github.com/pure-js/oklis-image-carousel/issues"
   },
   "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-config-google": "^0.7.1",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jade": "^1.0.0",
+    "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^1.2.1",
+    "grunt-eslint": "^19.0.0",
+    "grunt-sass": "^2.0.0",
     "grunt-yui-compressor": "^0.4.0",
     "jasmine": "^2.4.1",
-    "jshint": "^2.8.0",
     "karma": "^1.2.0",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.0.2",
