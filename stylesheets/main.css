@@ -279,7 +279,7 @@
   padding: 0 0 10px 0; }
 
 .icon-commercial-offer:after {
-  background: url("/img/icons/commercial-offer.png") no-repeat;
+  background: url("/examples/img/icons/commercial-offer.png") no-repeat;
   width: 56px;
   height: 51px;
   content: '';
@@ -292,7 +292,7 @@
   padding: 0 0 7px 0; }
 
 .icon-calculator:after {
-  background: url("/img/icons/calculator.png") no-repeat;
+  background: url("/examples/img/icons/calculator.png") no-repeat;
   width: 57px;
   height: 63px;
   content: '';
@@ -497,7 +497,7 @@
 .man-image {
   height: 416px;
   width: 600px;
-  background: url('/img/man.png') -21px -82px no-repeat;
+  background: url('/examples/img/man.png') -21px -82px no-repeat;
   position: relative;
   left: -71px; }
 
