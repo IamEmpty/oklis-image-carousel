@@ -35,11 +35,11 @@ html
 
       .col-md-4
         //- Wrapper need for on hover overlay effect
-        .b-image-gallery.b-image-gallery_vertical.as-we-need
+        .image-gallery.image-gallery_vertical.as-we-need
 
           //- Main image on the product page
-          .b-image-gallery__main-item.b-image-gallery__main-item_not-full
-            img.img.b-image-gallery__main-image(src= '../img/r1.jpg')
+          .image-gallery__main-item.image-gallery__main-item_not-full
+            img.img.image-gallery__main-image(src= 'img/r1.jpg')
 
           //- Previous image button
           button.btn-direction.btn-up.btn-up-indent
@@ -48,10 +48,10 @@ html
 
           //- Gallery of images under the main image
           .image-carousel-wrapper
-            ul.b-image-carousel
-              each image in ['../img/r2.jpg', '../img/r3.jpg', '../img/r4.jpg', '../img/r5.jpg', '../img/r4.jpg', '../img/r3.jpg']
-                li.b-image-carousel__item
-                  img.img.b-image-carousel__img(src= image)
+            ul.image-carousel
+              each image in ['img/r2.jpg', 'img/r3.jpg', 'img/r4.jpg', 'img/r5.jpg', 'img/r4.jpg', 'img/r3.jpg']
+                li.image-carousel__item
+                  img.img.image-carousel__img(src= image)
 
           //- Next image button
           button.btn-direction.btn-down.btn-down-indent
@@ -192,6 +192,8 @@ html
                       li.checker__item
                     button.carousel-navigation__button.btn.btn-nav.btn-next
                       img.img(src='/img/icons/chevron-right.png')
-    script(src= 'js/jquery.min.js')
-    script(src= 'js/oklis-image-carousel.js')
-    script(src= 'js/base.js')
+    //script(src= 'js/jquery.min.js')
+    //script(src= 'js/oklis-image-carousel.js')
+    //script(src= 'js/base.js')
+
+    script(src= 'js/oklis-image-carousel-v2.js')

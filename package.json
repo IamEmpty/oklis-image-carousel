@@ -1,9 +1,13 @@
 {
   "name": "oklis-image-carousel",
   "version": "0.0.1",
+  "scripts": {
+    "start": "grunt",
+    "test": "jasmine"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pure-js/oklis-image-carousel"
+    "url": "git+https://github.com/pure-js/oklis-image-carousel.git"
   },
   "author": "pure-js",
   "license": "MIT",
@@ -11,8 +15,8 @@
     "url": "https://github.com/pure-js/oklis-image-carousel/issues"
   },
   "devDependencies": {
-    "eslint": "^3.13.1",
-    "eslint-config-google": "^0.7.1",
+    "eslint": "~4.11.0",
+    "eslint-config-google": "~0.9.1",
     "grunt": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-pug": "^1.0.0",
@@ -26,5 +30,16 @@
     "load-grunt-tasks": "^3.5.2",
     "mocha": "^3.0.2",
     "qunitjs": "^2.0.1"
-  }
+  },
+  "description": "![build status](https://travis-ci.org/pure-js/oklis-image-carousel.svg?branch=master \"Build status\")",
+  "homepage": "https://github.com/pure-js/oklis-image-carousel#readme",
+  "main": "src/oklis-image-carousel.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {},
+  "keywords": [
+    "carousel",
+    "slider"
+  ]
 }

@@ -71,7 +71,7 @@ let currentPosition = 0;
       function calculateCarouselItemSize() {
         // Check Full Motion
 
-        if( $isFullMotion === true ) {
+        if ($isFullMotion === true) {
           fullMotion();
         } else {
           notFullMotion();
@@ -80,7 +80,7 @@ let currentPosition = 0;
 
         // Check orientation
 
-        if( $orientationIsVertical === true ) {
+        if ($orientationIsVertical === true) {
           orientationVertical(); // In case of vertical orientation do
         } else {
           orientationHorizontal(); // In case of horizontal orientation do
@@ -168,13 +168,13 @@ let currentPosition = 0;
       // Hide previous button at the beginning
       $prevButton.attr('disabled', 'disabled');
 
-      if( $isFullMotion === true ) {
-        if( currentPosition >= $amountOfDisplayedItems ) {
+      if ($isFullMotion === true ) {
+        if (currentPosition >= $amountOfDisplayedItems ) {
           $nextButton.attr('disabled', 'disabled');
         }
       } else {
         // if amount less then 4, we will hide next button too
-        if( amountOfGalleryItems <= $amountOfDisplayedItems ) {
+        if (amountOfGalleryItems <= $amountOfDisplayedItems ) {
           $nextButton.attr('disabled', 'disabled');
         }
       }
@@ -196,12 +196,12 @@ let currentPosition = 0;
 
       // In case of clicking on the next button
       $nextButton.on('click', function(e) {
-        if( $isFullMotion === true ) {
-          if( currentPosition < endPosition ) {
+        if ($isFullMotion === true ) {
+          if (currentPosition < endPosition ) {
             currentPosition++;
 
             // Check orientation
-            if( $orientationIsVertical === true ) {
+            if ($orientationIsVertical === true ) {
               // In case of vertical orientation
               $carousel.animate({
                 marginTop: '-=' + imageHeight,
@@ -214,11 +214,11 @@ let currentPosition = 0;
             }
           }
         } else {
-          if( currentPosition < endPosition - stepOfPositioning ) {
+          if (currentPosition < endPosition - stepOfPositioning ) {
             currentPosition++;
 
             // Check orientation
-            if( $orientationIsVertical === true ) {
+            if ($orientationIsVertical === true ) {
               // In case of vertical orientation
               $carousel.animate({
                 marginTop: '-=' + imageHeight,
@@ -233,18 +233,18 @@ let currentPosition = 0;
         }
 
 
-        if( $isFullMotion === true ) {
-          if( currentPosition >= endPosition ) {
+        if ($isFullMotion === true ) {
+          if (currentPosition >= endPosition ) {
             $(this).attr('disabled', 'disabled');
           }
         } else {
-          if( currentPosition >= endPosition - stepOfPositioning ) {
+          if (currentPosition >= endPosition - stepOfPositioning ) {
             $(this).attr('disabled', 'disabled');
           }
         }
 
 
-        if( currentPosition > 0 ) {
+        if (currentPosition > 0 ) {
           $prevButton.removeAttr('disabled');
         }
 
@@ -256,11 +256,11 @@ let currentPosition = 0;
       $prevButton.on('click', function(e) {
         e.preventDefault();
 
-        if( currentPosition > 0 ) {
+        if (currentPosition > 0 ) {
           currentPosition--;
 
           // Check orientation
-          if( $orientationIsVertical === true ) {
+          if ($orientationIsVertical === true ) {
             // In case of vertical orientation do
             $carousel.animate({
               marginTop: '+=' + imageHeight,
@@ -274,16 +274,16 @@ let currentPosition = 0;
         }
 
 
-        if( currentPosition <= 0 ) {
+        if (currentPosition <= 0 ) {
           $(this).attr('disabled', 'disabled');
         }
 
-        if( $isFullMotion === true ) {
-          if( currentPosition < endPosition ) {
+        if ($isFullMotion === true ) {
+          if (currentPosition < endPosition ) {
             $nextButton.removeAttr('disabled');
           }
         } else {
-          if( currentPosition < endPosition - stepOfPositioning ) {
+          if (currentPosition < endPosition - stepOfPositioning ) {
             $nextButton.removeAttr('disabled');
           }
         }

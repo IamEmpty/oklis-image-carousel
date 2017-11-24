@@ -70,13 +70,21 @@ module.exports = function(grunt) {
         flatten: true,
         filter: 'isFile',
       },
+      img: {
+        expand: true,
+        cwd: 'examples/img/',
+        src: '*.jpg',
+        dest: 'dist/img/',
+        flatten: true,
+        filter: 'isFile',
+      },
     },
     eslint: {
       target: [
         'src/oklis-image-carousel.js',
       ],
     },
-    /*min: {
+    /* min: {
         'dist': {
             'src': ['js/oklis-image-carousel.js', 'js/base.js'],
             'dest': 'build/all-own.min.js'

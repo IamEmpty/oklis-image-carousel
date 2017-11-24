@@ -7,7 +7,7 @@ $black: #000;
 // Here we go
 //-------------------------------
 
-.b-image-gallery__main-item {
+.image-gallery__main-item {
   cursor: pointer;
   position: relative;
 
@@ -21,27 +21,29 @@ $black: #000;
     top: 0;
     z-index: 20;
   }
-}
 
-.b-image-gallery__main-item_not-full {
-  cursor: pointer;
-  position: relative;
-  width: 70%;
-  float: left;
+  &_not-full {
+    cursor: pointer;
+    position: relative;
+    width: 70%;
+    float: left;
 
-  &:after {
-    content: '';
-    display: block;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 20;
+    &:after {
+      content: '';
+      display: block;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 20;
+    }
   }
 }
 
-  .b-image-gallery__main-image {
+
+
+  .image-gallery__main-image {
     width: 100%;
   }
 
@@ -54,13 +56,13 @@ $black: #000;
   overflow: hidden;
 }
 
-.b-image-carousel {
+.image-carousel {
   padding: 0;
   margin: 0;
   font-size: 0;
 }
 
-    .b-image-carousel__item {
+    .image-carousel__item {
       //width: 25%;
       height: 100%;
       display: inline-block;
@@ -83,29 +85,29 @@ $black: #000;
       }
     }
 
-      .b-image-carousel__img {
+      .image-carousel__img {
         width: 100%;
         //opacity: 1;
       }
 
 
-.b-image-gallery:hover .b-image-carousel__item:after {
+.image-gallery:hover .image-carousel__item:after {
   background: rgba(0, 0, 0, .7);
   transition: .2s;
 }
 
-.b-image-gallery:hover .b-image-gallery__main-item:after {
+.image-gallery:hover .image-gallery__main-item:after {
   background: rgba(0, 0, 0, .7);
   transition: .2s;
 }
 
 
-.b-image-gallery:hover .b-image-carousel__item:hover:after {
+.image-gallery:hover .image-carousel__item:hover:after {
   background: rgba(0, 0, 0, 0);
   transition: .2s;
 }
 
-.b-image-gallery:hover .b-image-gallery__main-item:hover:after {
+.image-gallery:hover .image-gallery__main-item:hover:after {
   background: rgba(0, 0, 0, 0);
   transition: .2s;
 }
